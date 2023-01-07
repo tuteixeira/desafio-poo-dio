@@ -7,57 +7,59 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        Curso curso1 = new Curso();
-        curso1.setTitulo("curso java");
-        curso1.setDescricao("descrição curso java");
-        curso1.setCargaHoraria(8);
+        Curso cursoJava = new Curso();
+        cursoJava.setTitulo("Curso Java");
+        cursoJava.setDescricao("Descrição do curso de Java");
+        cursoJava.setCargaHoraria(80);
 
-        Curso curso2 = new Curso();
-        curso2.setTitulo("curso js");
-        curso2.setDescricao("descrição curso js");
-        curso2.setCargaHoraria(4);
+        Curso cursoPython = new Curso();
+        cursoPython.setTitulo("Curso Python 3");
+        cursoPython.setDescricao("Descrição curso de Python 3");
+        cursoPython.setCargaHoraria(40);
 
         Mentoria mentoria = new Mentoria();
-        mentoria.setTitulo("mentoria de java");
-        mentoria.setDescricao("descrição mentoria java");
+        mentoria.setTitulo("Mentoria de Java");
+        mentoria.setDescricao("Descrição da mentoria de Java");
         mentoria.setData(LocalDate.now());
-
-        /*System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);*/
 
         Bootcamp bootcamp = new Bootcamp();
         bootcamp.setNome("Bootcamp Java Developer");
-        bootcamp.setDescricao("Descrição Bootcamp Java Developer");
-        bootcamp.getConteudos().add(curso1);
-        bootcamp.getConteudos().add(curso2);
+        bootcamp.setDescricao("Descrição do Bootcamp de Java Developer");
+        bootcamp.getConteudos().add(cursoJava);
+        bootcamp.getConteudos().add(cursoPython);
         bootcamp.getConteudos().add(mentoria);
 
-        Dev devCamila = new Dev();
-        devCamila.setNome("Camila");
-        devCamila.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
-        devCamila.progredir();
-        devCamila.progredir();
+        Dev devTuki = new Dev();
+        devTuki.setNome("Tuki");
+        devTuki.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos " + devTuki.getNome() + ":" + devTuki.getConteudosInscritos());
+        devTuki.progredir();
+        devTuki.progredir();
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
-        System.out.println("Conteúdos Concluídos Camila:" + devCamila.getConteudosConcluidos());
-        System.out.println("XP:" + devCamila.calcularTotalXp());
+        System.out.println("Conteúdos Inscritos " + devTuki.getNome() + ":" + devTuki.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos " + devTuki.getNome() + ":" + devTuki.getConteudosConcluidos());
+        System.out.println("XP:" + devTuki.calcularTotalXp());
 
         System.out.println("-------");
 
-        Dev devJoao = new Dev();
-        devJoao.setNome("Joao");
-        devJoao.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
-        devJoao.progredir();
-        devJoao.progredir();
-        devJoao.progredir();
-        System.out.println("-");
-        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
-        System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
-        System.out.println("XP:" + devJoao.calcularTotalXp());
+        Dev devNina = new Dev();
+        devNina.setNome("Nina");
+        devNina.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos " + devNina.getNome() + ":" + devNina.getConteudosInscritos());
+        devNina.progredir();
+        devNina.progredir();
+        devNina.progredir();
+        System.out.println("Conteúdos Inscritos " + devNina.getNome() + ":" + devNina.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos " + devNina.getNome() + ":" + devNina.getConteudosConcluidos());
+        System.out.println("XP:" + devNina.calcularTotalXp());
 
+        System.out.println("-------");
+
+        Dev devPiloto = new Dev();
+        devPiloto.setNome("Piloto");
+        devPiloto.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos " + devPiloto.getNome() + ":" + devPiloto.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos " + devPiloto.getNome() + ":" + devPiloto.getConteudosConcluidos());
+        System.out.println("XP:" + devPiloto.calcularTotalXp());
     }
-
 }
